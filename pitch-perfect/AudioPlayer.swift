@@ -1,17 +1,21 @@
 //
-//  PlaySoundsVC+Audio.swift
+//  AudioPlayer.swift
 //  pitch-perfect
 //
-//  Created by Amadeu Andrade on 07/05/16.
+//  Created by Amadeu Andrade on 04/06/16.
 //  Copyright © 2016 Amadeu Andrade. All rights reserved.
 //
 
 import UIKit
 import AVFoundation
 
-extension PlaySoundsViewController {
-
-    func setupAudio() {
+class AudioPlayer {
+    
+    var audioFile: AVAudioFile!
+    var audioEngine: AVAudioEngine!
+    var audioPlayerNode: AVAudioPlayerNode!
+    
+    init(recordedAudioURL: NSURL) {
         do {
             audioFile = try AVAudioFile(forReading: recordedAudioURL)
             audioEngine = AVAudioEngine()
@@ -19,7 +23,7 @@ extension PlaySoundsViewController {
             audioEngine.attachNode(audioPlayerNode)
         } catch {
             print("Cannot grab the file")
-            Helper().showAlert(self, title: "Audio File Error", message: Helper.PlayingAlerts.FileError)
+            //            UtilAlerts().showAlert(self, title: "Audio File Error", message: UtilAlerts.PlayingAlerts.FileError)
         }
     }
     
@@ -61,7 +65,7 @@ extension PlaySoundsViewController {
             audioPlayerNode.play()
         } catch {
             print("Cannot start playing audio!")
-            Helper().showAlert(self, title: "Audio Error", message: Helper.PlayingAlerts.PlayingAudioFailed)
+            //            UtilAlerts().showAlert(self, title: "Audio Error", message: UtilAlerts.PlayingAlerts.PlayingAudioFailed)
         }
     }
     
@@ -74,5 +78,5 @@ extension PlaySoundsViewController {
             audioEngine.reset()
         }
     }
-
+    
 }

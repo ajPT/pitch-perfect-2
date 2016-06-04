@@ -11,34 +11,33 @@ import AVFoundation
 
 class PlaySoundsViewController: UIViewController {
     
+    var audioPlayer: AudioPlayer!
     var recordedAudioURL: NSURL!
-    var audioFile: AVAudioFile!
-    var audioEngine: AVAudioEngine!
-    var audioPlayerNode: AVAudioPlayerNode!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupAudio()
+        audioPlayer = AudioPlayer(recordedAudioURL: recordedAudioURL)
     }
     
     @IBAction func playSoundEffect(sender: UIButton) {
         if sender.tag == 0 {
-            playSound(rate: 0.5)
+            audioPlayer.playSound(rate: 0.5)
         } else if sender.tag == 1 {
-            playSound(rate: 1.5)
+            audioPlayer.playSound(rate: 1.5)
         } else if sender.tag == 2 {
-            playSound(pitch: 1000)
+            audioPlayer.playSound(pitch: 1000)
         } else if sender.tag == 3 {
-            playSound(pitch: -1000)
+            audioPlayer.playSound(pitch: -1000)
         } else if sender.tag == 4 {
-            playSound(echo: true)
+            audioPlayer.playSound(echo: true)
         } else if sender.tag == 5 {
-            playSound(reverb: true)
+            audioPlayer.playSound(reverb: true)
         }
     }
-
+    
     @IBAction func onStopPressed(sender: AnyObject) {
-        stopAudio()
+        audioPlayer.stopAudio()
     }
-
+    
 }
+

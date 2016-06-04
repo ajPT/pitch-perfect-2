@@ -9,21 +9,32 @@
 import UIKit
 import AVFoundation
 
-class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
+class RecordSoundViewController: UIViewController {
     
-    var audioRecorder: AVAudioRecorder!
-    var recordingSession: AVAudioSession!
+    var audioRecorder: AudioRecorder!
     var timer: NSTimer!
     var counter = 0
+    
+    let recorderSettings = [
+        AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
+        AVSampleRateKey: 12000.0,
+        AVNumberOfChannelsKey: 1 as NSNumber,
+        AVEncoderAudioQualityKey: AVAudioQuality.High.rawValue
+    ]
     
     @IBOutlet weak var recordBtn: UIButton!
     @IBOutlet weak var recordLbl: UILabel!
     @IBOutlet weak var stopRecBtn: UIButton!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        askUserPermissionToUseMicro()
-        self.navigationController?.navigationBar.tintColor = UIColor(red: 54.0/255.0, green: 54.0/255.0, blue: 54.0/255.0, alpha: 1.0)
+        audioRecorder = AudioRecorder()
+        if audioRecorder.askUserPermissionToUseMicro() == false {
+            recordBtn.enabled = false
+            recordLbl.text = "Please ensure the app has access to your microphone."
+            UtilAlerts().showAlert(self, title: "Permission Denied", message: UtilAlerts.RecordingAlerts.PermissionDenied)
+        }
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(RecordSoundViewController.finishedRecording(_:)), name: "finishRecording:", object: nil)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -31,26 +42,22 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
         stopRecBtn.enabled = false
         recordLbl.text = "Tap to record"
     }
-
+    
     @IBAction func onRecordPressed(sender: UIButton!) {
         recordBtn.enabled = false
         stopRecBtn.enabled = true
         startTimer()
-        setupAndRunRecorder()
+        audioRecorder.beginRecording()
     }
     
     @IBAction func onStopRecPressed(sender: AnyObject) {
-        stopRecording()
+        audioRecorder.stopRecording()
         stopTimer()
     }
-
-    func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {
-        print("Finished recording")
-        if flag {
-            performSegueWithIdentifier("openPlaySoundsView", sender: audioRecorder.url)
-        } else {
-            print("Recording failed!")
-        }
+    
+    func finishedRecording(notification: NSNotification) {
+        let url = notification.object as? NSURL
+        performSegueWithIdentifier("openPlaySoundsView", sender: url)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -62,5 +69,5 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
             }
         }
     }
-
+    
 }

@@ -1,15 +1,15 @@
 //
-//  Helper.swift
+//  UtilAlerts.swift
 //  pitch-perfect
 //
-//  Created by Amadeu Andrade on 07/05/16.
+//  Created by Amadeu Andrade on 04/06/16.
 //  Copyright © 2016 Amadeu Andrade. All rights reserved.
 //
 
 import UIKit
 
-class Helper {
-
+class UtilAlerts {
+    
     struct RecordingAlerts {
         static let PermissionDenied = "Permission to record not granted."
         static let RecordingFailed = "For some unknown reason your recording has failed."
