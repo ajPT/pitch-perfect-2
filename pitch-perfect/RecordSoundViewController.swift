@@ -56,7 +56,7 @@ class RecordSoundViewController: UIViewController {
     }
     
     func finishedRecording(notification: NSNotification) {
-        let url = notification.object as? NSURL
+        let url = notification.userInfo!["url"] as? NSURL
         performSegueWithIdentifier("openPlaySoundsView", sender: url)
     }
     
