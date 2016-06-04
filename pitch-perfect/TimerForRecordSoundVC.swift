@@ -1,13 +1,12 @@
 //
-//  RecordSoundVC+Audio.swift
+//  TimerForRecordSoundVC.swift
 //  pitch-perfect
 //
-//  Created by Amadeu Andrade on 07/05/16.
+//  Created by Amadeu Andrade on 04/06/16.
 //  Copyright © 2016 Amadeu Andrade. All rights reserved.
 //
 
-import UIKit
-import AVFoundation
+import Foundation
 
 extension RecordSoundViewController {
 
@@ -35,5 +34,4 @@ extension RecordSoundViewController {
         let hours = (counter / 3600)
         return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
     }
-    
 }

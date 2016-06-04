@@ -13,12 +13,12 @@
 		E01C3F881CD4F27E00937FD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E01C3F871CD4F27E00937FD7 /* Assets.xcassets */; };
 		E01C3F8B1CD4F27E00937FD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E01C3F891CD4F27E00937FD7 /* LaunchScreen.storyboard */; };
 		E01C3F931CD531D000937FD7 /* PlaySoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01C3F921CD531D000937FD7 /* PlaySoundsViewController.swift */; };
-		E01C3F991CDE35D000937FD7 /* RecordSoundVC+Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01C3F981CDE35D000937FD7 /* RecordSoundVC+Timer.swift */; };
 		E01FA5131CDF5C6F00F58E28 /* SketchRockwell-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E01FA5121CDF5C6F00F58E28 /* SketchRockwell-Bold.ttf */; };
 		E0AF147A1D02FCBB00B742C7 /* UtilOthers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AF14791D02FCBB00B742C7 /* UtilOthers.swift */; };
 		E0AF147C1D02FCDC00B742C7 /* UtilAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AF147B1D02FCDC00B742C7 /* UtilAlerts.swift */; };
 		E0AF147E1D02FD0900B742C7 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AF147D1D02FD0900B742C7 /* AudioPlayer.swift */; };
 		E0AF14801D02FD3100B742C7 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AF147F1D02FD3100B742C7 /* AudioRecorder.swift */; };
+		E0AF14821D03139700B742C7 /* TimerForRecordSoundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AF14811D03139700B742C7 /* TimerForRecordSoundVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,12 +30,12 @@
 		E01C3F8A1CD4F27E00937FD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E01C3F8C1CD4F27E00937FD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E01C3F921CD531D000937FD7 /* PlaySoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySoundsViewController.swift; sourceTree = "<group>"; };
-		E01C3F981CDE35D000937FD7 /* RecordSoundVC+Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RecordSoundVC+Timer.swift"; sourceTree = "<group>"; };
 		E01FA5121CDF5C6F00F58E28 /* SketchRockwell-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SketchRockwell-Bold.ttf"; sourceTree = "<group>"; };
 		E0AF14791D02FCBB00B742C7 /* UtilOthers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilOthers.swift; sourceTree = "<group>"; };
 		E0AF147B1D02FCDC00B742C7 /* UtilAlerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilAlerts.swift; sourceTree = "<group>"; };
 		E0AF147D1D02FD0900B742C7 /* AudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		E0AF147F1D02FD3100B742C7 /* AudioRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
+		E0AF14811D03139700B742C7 /* TimerForRecordSoundVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerForRecordSoundVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +94,7 @@
 			children = (
 				E0AF147D1D02FD0900B742C7 /* AudioPlayer.swift */,
 				E0AF147F1D02FD3100B742C7 /* AudioRecorder.swift */,
-				E01C3F981CDE35D000937FD7 /* RecordSoundVC+Timer.swift */,
+				E0AF14811D03139700B742C7 /* TimerForRecordSoundVC.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -192,8 +192,8 @@
 				E01C3F831CD4F27E00937FD7 /* RecordSoundViewController.swift in Sources */,
 				E0AF147A1D02FCBB00B742C7 /* UtilOthers.swift in Sources */,
 				E0AF147E1D02FD0900B742C7 /* AudioPlayer.swift in Sources */,
-				E01C3F991CDE35D000937FD7 /* RecordSoundVC+Timer.swift in Sources */,
 				E0AF14801D02FD3100B742C7 /* AudioRecorder.swift in Sources */,
+				E0AF14821D03139700B742C7 /* TimerForRecordSoundVC.swift in Sources */,
 				E01C3F931CD531D000937FD7 /* PlaySoundsViewController.swift in Sources */,
 				E0AF147C1D02FCDC00B742C7 /* UtilAlerts.swift in Sources */,
 				E01C3F811CD4F27E00937FD7 /* AppDelegate.swift in Sources */,

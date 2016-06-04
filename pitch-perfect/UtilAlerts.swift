@@ -10,15 +10,8 @@ import UIKit
 
 class UtilAlerts {
     
-    struct RecordingAlerts {
+    struct PermissionAlerts {
         static let PermissionDenied = "Permission to record not granted."
-        static let RecordingFailed = "For some unknown reason your recording has failed."
-        static let InactiveSession = "For some unknown reason the audio session failed."
-    }
-    
-    struct PlayingAlerts {
-        static let FileError = "Could not grab the file."
-        static let PlayingAudioFailed = "Could not start playing audio."
     }
     
     func showAlert(delegate: UIViewController, title: String, message: String) {

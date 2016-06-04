@@ -23,7 +23,6 @@ class AudioPlayer {
             audioEngine.attachNode(audioPlayerNode)
         } catch {
             print("Cannot grab the file")
-            //            UtilAlerts().showAlert(self, title: "Audio File Error", message: UtilAlerts.PlayingAlerts.FileError)
         }
     }
     
@@ -65,7 +64,6 @@ class AudioPlayer {
             audioPlayerNode.play()
         } catch {
             print("Cannot start playing audio!")
-            //            UtilAlerts().showAlert(self, title: "Audio Error", message: UtilAlerts.PlayingAlerts.PlayingAudioFailed)
         }
     }
     

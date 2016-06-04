@@ -36,7 +36,6 @@ class AudioRecorder: AVAudioRecorder, AVAudioRecorderDelegate {
             audioRecorder.prepareToRecord()
         } catch let error as NSError {
             print(error.debugDescription)
-            //            UtilAlerts().showAlert(self, title: "Recording Failed", message: UtilAlerts.RecordingAlerts.RecordingFailed)
         }
     }
     
@@ -82,7 +81,6 @@ class AudioRecorder: AVAudioRecorder, AVAudioRecorderDelegate {
             try audioSession.setActive(false)
         } catch let error as NSError {
             print(error.debugDescription)
-            //            UtilAlerts().showAlert(self, title: "Audio Session", message: UtilAlerts.RecordingAlerts.InactiveSession)
         }
     }
     
