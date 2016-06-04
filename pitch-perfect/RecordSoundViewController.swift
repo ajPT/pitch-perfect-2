@@ -34,7 +34,7 @@ class RecordSoundViewController: UIViewController {
             recordLbl.text = "Please ensure the app has access to your microphone."
             UtilAlerts().showAlert(self, title: "Permission Denied", message: UtilAlerts.RecordingAlerts.PermissionDenied)
         }
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(RecordSoundViewController.finishedRecording(_:)), name: "finishRecording:", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(RecordSoundViewController.finishedRecording(_:)), name: "finishRecording", object: nil)
     }
     
     override func viewWillAppear(animated: Bool) {
