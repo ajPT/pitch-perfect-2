@@ -89,8 +89,8 @@ class AudioRecorder: AVAudioRecorder, AVAudioRecorderDelegate {
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {
         print("Finished recording")
         let notif = NSNotification(name: "finishRecording", object: recorder.url)
+        print("NOTIF : \(notif)")
         NSNotificationCenter.defaultCenter().postNotification(notif)
-       // RecordSoundViewController().finishedRecording(flag: flag, recorderURL: recorder.url)
     }
     
     
