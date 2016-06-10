@@ -14,14 +14,7 @@ class RecordSoundViewController: UIViewController {
     var audioRecorder: AudioRecorder!
     var timer: NSTimer!
     var counter = 0
-    
-    let recorderSettings = [
-        AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
-        AVSampleRateKey: 12000.0,
-        AVNumberOfChannelsKey: 1 as NSNumber,
-        AVEncoderAudioQualityKey: AVAudioQuality.High.rawValue
-    ]
-    
+        
     @IBOutlet weak var recordBtn: UIButton!
     @IBOutlet weak var recordLbl: UILabel!
     @IBOutlet weak var stopRecBtn: UIButton!
